@@ -1,20 +1,25 @@
 {
-  "name": "date",
+  "name": "task",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.20.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "json-server": "^0.16.1",
+    "concurrently": "^3.6.1"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "startClient": "react-scripts start",
+    "startServer": "json-server --watch data.json --port 3001",
+    "start": "concurrently \"npm run startClient\" \"npm run startServer\""
   },
   "eslintConfig": {
     "extends": "react-app"
